@@ -162,25 +162,40 @@ const heroSection = $('#hero');
 // ═══════════════════════════════════════════════════════════
 function initPreloader() {
   let loaded = 0;
-  const total = PRODUCTS.length;
-  const promises = PRODUCTS.map((p) =>
+  // Only preload the hero images to get users in faster
+  const heroImages = featuredProducts().map(p => p.src);
+  const total = heroImages.length;
+  
+  let preloaderDone = false;
+  const hidePreloader = () => {
+    if (preloaderDone) return;
+    preloaderDone = true;
+    preloader.classList.add('hidden');
+    document.body.style.overflow = '';
+    initScrollReveal();
+  };
+
+  const promises = heroImages.map((src) =>
     new Promise((resolve) => {
       const img = new Image();
       img.onload = img.onerror = () => {
         loaded++;
-        preloaderFill.style.width = Math.round((loaded / total) * 100) + '%';
+        if (!preloaderDone) {
+          preloaderFill.style.width = Math.round((loaded / total) * 100) + '%';
+        }
         resolve();
       };
-      img.src = p.src;
+      img.src = src;
     })
   );
+
   Promise.all(promises).then(() => {
-    setTimeout(() => {
-      preloader.classList.add('hidden');
-      document.body.style.overflow = '';
-      initScrollReveal();
-    }, 500);
+    // Small delay to let the progress bar hit 100% visually
+    setTimeout(hidePreloader, 400);
   });
+
+  // Maximum loading time: 2.5s. If network is slow, drop them in anyway.
+  setTimeout(hidePreloader, 2500);
 }
 
 // ═══════════════════════════════════════════════════════════
