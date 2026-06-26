@@ -162,9 +162,13 @@ const heroSection = $('#hero');
 // ═══════════════════════════════════════════════════════════
 function initPreloader() {
   let loaded = 0;
-  // Only preload the hero images to get users in faster
-  const heroImages = featuredProducts().map(p => p.src);
-  const total = heroImages.length;
+  // Preload ALL images (main + alt) to prevent any pop-in during scroll
+  const allImages = [];
+  PRODUCTS.forEach(p => {
+    if (p.src) allImages.push(p.src);
+    if (p.srcAlt) allImages.push(p.srcAlt);
+  });
+  const total = allImages.length;
   
   let preloaderDone = false;
   const hidePreloader = () => {
@@ -175,7 +179,7 @@ function initPreloader() {
     initScrollReveal();
   };
 
-  const promises = heroImages.map((src) =>
+  const promises = allImages.map((src) =>
     new Promise((resolve) => {
       const img = new Image();
       img.onload = img.onerror = () => {
@@ -190,12 +194,10 @@ function initPreloader() {
   );
 
   Promise.all(promises).then(() => {
-    // Small delay to let the progress bar hit 100% visually
     setTimeout(hidePreloader, 400);
   });
 
-  // Maximum loading time: 2.5s. If network is slow, drop them in anyway.
-  setTimeout(hidePreloader, 2500);
+  setTimeout(hidePreloader, 5000);
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -340,7 +342,7 @@ function createProductCard(product, staggerIndex) {
 
   card.innerHTML = `
     <div class="card-img-wrap">
-      <img src="${product.src}" alt="${product.name}" loading="lazy" />
+      <img src="${product.src}" alt="${product.name}" />
       <span class="card-badge">${product.tag}</span>
       <button class="card-quick-add" data-product-id="${product.id}" aria-label="Quick add ${product.name}">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
