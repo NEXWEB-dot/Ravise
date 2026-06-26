@@ -504,6 +504,9 @@ img {
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.06);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .product-card:hover {
   transform: translateY(-6px);
@@ -571,6 +574,9 @@ img {
 }
 .card-body {
   padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .card-category {
   font-size: 10px;
@@ -591,6 +597,7 @@ img {
   color: rgba(255,255,255,0.4);
   line-height: 1.5;
   margin-bottom: 16px;
+  flex: 1; /* Pushes the footer down */
 }
 .card-footer {
   display: flex;
