@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAVISE — Anime Streetwear Drops</title>
+  <meta name="description" content="RAVISE is a Pakistani anime streetwear label. Oversized graphic tees, back-print focused. Limited drops." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-brand">RAVISE</div>
+      <div class="preloader-bar-track">
+        <div class="preloader-bar-fill" id="preloaderFill"></div>
+      </div>
+      <div class="preloader-tagline">LOADING DROP...</div>
+    </div>
+  </div>
+
+  <!-- Fixed Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand-link" id="navBrandLink">RAVISE</a>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+        <a href="#drops" class="nav-link" data-section="drops">Drops</a>
+        <a href="#collection" class="nav-link" data-section="collection">Collection</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://www.instagram.com/raviseofficial1" target="_blank" rel="noopener noreferrer" class="nav-ig" id="navIg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════ HERO SECTION ════════ -->
+  <section id="hero" class="hero-section">
+    <div class="hero-sticky" id="heroSticky">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-grain"></div>
+      <div class="hero-ghost">OVERSIZED</div>
+
+      <div id="carousel" class="carousel"></div>
+
+      <div id="productOverlay" class="product-overlay">
+        <div class="product-tag" id="productTag"></div>
+        <div class="product-name" id="productName"></div>
+      </div>
+
+      <div class="hero-bottom-left">
+        <div class="hero-desc" id="heroDesc"></div>
+      </div>
+
+      <div class="hero-bottom-right">
+        <a href="#drops" class="hero-cta">
+          <span>SHOP DROPS</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="scroll-indicator" style="display: flex;">
+        <div class="scroll-line"></div>
+        <span>SCROLL TO EXPLORE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FEATURED DROPS ════════ -->
+  <section id="drops" class="section drops-section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">LATEST DROPS</span>
+        <h2 class="section-title">Fresh Off The Press</h2>
+        <p class="section-sub">Limited run. Once they're gone, they're gone.</p>
+      </div>
+      <div class="drops-grid" id="dropsGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FULL COLLECTION ════════ -->
+  <section id="collection" class="section collection-section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">FULL COLLECTION</span>
+        <h2 class="section-title">Every Piece. Every Story.</h2>
+        <p class="section-sub">Oversized heavyweight tees. Back-print focused. Culture you can wear.</p>
+      </div>
+      <div class="collection-grid" id="collectionGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ ABOUT ════════ -->
+  <section id="about" class="section about-section">
+    <div class="section-inner">
+      <div class="about-content reveal">
+        <span class="section-tag">THE BRAND</span>
+        <h2 class="about-title">We Don't Explain.<br/>We Show.</h2>
+        <p class="about-text">RAVISE is a Pakistani anime streetwear label. Every tee is a cultural object — oversized, heavyweight, back-print focused. Bleach. Kung Fu Panda. Original dark art. If you know, you know.</p>
+        <p class="about-text">The buyer is 18–28, anime-fluent, streetwear-conscious, Instagram-native. We don't make clothes. We make drops.</p>
+        <div class="about-stats">
+          <div class="stat reveal-delay-1">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Premium Cotton</span>
+          </div>
+          <div class="stat reveal-delay-2">
+            <span class="stat-num">300 GSM</span>
+            <span class="stat-label">Heavyweight</span>
+          </div>
+          <div class="stat reveal-delay-3">
+            <span class="stat-num">LTD</span>
+            <span class="stat-label">Limited Runs</span>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/raviseofficial1" target="_blank" rel="noopener noreferrer" class="about-ig-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Follow @raviseofficial1
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">RAVISE</div>
+      <p class="footer-copy">&copy; 2026 RAVISE. All rights reserved. Pakistan.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/raviseofficial1" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#drops">Shop</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════ CART DRAWER ════════ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <p>Nothing here yet.</p>
+        <span>Add some heat to your cart.</span>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">PKR 0</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        ORDER ON WHATSAPP
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Added to cart</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
